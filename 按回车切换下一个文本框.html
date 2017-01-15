@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text"><br/>
+    <input type="text"><br/>
+    <input type="text"><br/>
+    <input type="text"><br/>
+    <input type="text"><br/>
+    <input type="text"><br/>
+    <input type="text"><br/>
+    <input type="text"><br/>
+    <input type="text"><br/>
+    <input type="text"><br/>
+
+    <script>
+        var inputs = document.getElementsByTagName('input');
+        for(var i=0; i<inputs.length; i++){
+            inputs[i].onkeydown = function(event){
+                 event = event || window.event;
+                 if(event.keyCode == 13){
+                     var nextInput = this.nextElementSibling.nextElementSibling;
+                    
+                   if(nextInput.type == 'text'){
+                        nextInput.focus();
+                   }
+                 }
+            }
+        }
+    </script>
+</body>
+</html>
